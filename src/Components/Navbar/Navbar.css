@@ -8,17 +8,15 @@
 
 .navbar {
     position: fixed;
-    display: flex;
-    justify-content: center;
     top: 0;
-    left: 0;
     width: 100%;
     min-width: 320px;
-    margin: 16px 0;
+    margin: 16px 0 0 0;
 }
 
 .navbar-container {
-    width: 90%;
+    width: 95%;
+    min-width: 320;
     display: flex;
     justify-content: space-between;
     align-items: center;
