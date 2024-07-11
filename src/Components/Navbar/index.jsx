@@ -29,8 +29,9 @@ function Navbar () {
                                 Sign Out
                             </NavLink>
                         </li>
-                        <li>
-                            c0
+                        <li className='shopping-cart-container'>
+                            <img src='/shopping-cart.svg' alt="cart" className='shopping-cart-img'/>
+                            <p>0</p>
                         </li>
                     </ul>
                 </nav>

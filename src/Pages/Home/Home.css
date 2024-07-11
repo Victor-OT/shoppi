@@ -8,6 +8,18 @@
     width: 100%;
     min-width: 320;
 }
+.categories-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 12px;
+}
+
+.categories-selection img {
+    width: 5px;
+    height: 9px;
+}
 
 .categories-container nav ul{
     width: 100%;
@@ -17,7 +29,7 @@
     overscroll-behavior-x: auto;
     gap: 8px;
     list-style: none;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     padding: 0;
     margin: 0;

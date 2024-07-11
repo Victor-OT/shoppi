@@ -6,7 +6,11 @@ function Home () {
     return (
         <Layout>
             <div className='categories-container'>
-                <h2>Categories</h2>
+                <div className='categories-selection'>
+                    <img src='/arrow-left.svg' alt="left" />
+                    <h2>Categories</h2>
+                    <img src='/arrow-right.svg' alt="right" />
+                </div>
                 <nav>
                     <ul>
                         <li>

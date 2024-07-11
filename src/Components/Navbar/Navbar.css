@@ -24,16 +24,26 @@
 
 .navbar-container .h1 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .navbar-container ul {
     display: flex;
-    gap: 8px;
+    gap: 7px;
     list-style-type: none;
     color: black;
     font-size: 8px;
     font-weight: 500;
+}
+
+.shopping-cart-container {
+    display: flex;
+    align-items: center;
+    height: 8px;
+}
+.shopping-cart-img {
+    width: 8px;
+    height: 8px;
 }
 
 .active-link {
@@ -48,7 +58,7 @@
 
 .active-h1 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 28px;
     text-decoration-line: none;
     color: var(--shoppi-black);
 }
