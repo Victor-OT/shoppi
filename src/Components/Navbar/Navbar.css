@@ -1,0 +1,56 @@
+:root {
+    --shoppi-green: #0DCA65;
+    --shoppi-grey: #AFAFAF;
+    --shoppi-black: #151515;
+    --montserrat: "Montserrat", sans-serif;
+    
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 320px;
+    margin-top: 16px;
+}
+
+.navbar-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-container .h1 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.navbar-container ul {
+    display: flex;
+    gap: 8px;
+    list-style-type: none;
+    color: black;
+    font-size: 8px;
+    font-weight: 500;
+}
+
+.active-link {
+    color: var(--shoppi-black);
+    text-underline-offset: 3px;
+}
+
+.inactive-link {
+    text-decoration-line: none;
+    color: var(--shoppi-black);
+}
+
+.active-h1 {
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration-line: none;
+    color: var(--shoppi-black);
+}
