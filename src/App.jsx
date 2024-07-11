@@ -11,7 +11,12 @@ function AppRoutes () {
     { path: '/', element: <Home /> },
     { path: '/my-orders', element: <MyOrders /> },
     { path: '/my-account', element: <MyAccount /> },
-    { path: '/sign-out', element: <SignOut /> }
+    { path: '/sign-out', element: <SignOut /> },
+    { path: '/*', element: <div>Not Found</div> },
+    { path: '/mens-clothing', element: <Home /> },
+    { path: '/womens-clothing', element: <Home /> },
+    { path: '/jewelery', element: <Home /> },
+    { path: '/electronics', element: <Home /> },
   ])
 
   return routes
