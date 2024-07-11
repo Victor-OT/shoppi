@@ -2,6 +2,7 @@
     --shoppi-green: #0DCA65;
     --shoppi-grey: #AFAFAF;
     --shoppi-black: #151515;
+    --montserrat: "Montserrat", sans-serif;
 }
 
 .categories-container {
@@ -63,3 +64,20 @@
     white-space: nowrap;
 }
 
+.search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 172px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: var(--montserrat);
+    border: 1px solid var(--shoppi-green);
+    border-radius: 8px;
+    padding: 0 0 0 8px;
+    outline: none;
+}

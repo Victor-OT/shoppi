@@ -45,6 +45,9 @@ function Home () {
                         </li>
                     </ul>
                 </nav>
+                <div className='search-bar'>
+                    <input type="text" placeholder='Search a Product...'/>
+                </div>
             </div>
         </Layout>
     )
