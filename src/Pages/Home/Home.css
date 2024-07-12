@@ -90,5 +90,5 @@
     grid-template-columns: 1fr 1fr;
     position: absolute;
     left: calc(50% - 140px);
-    top: calc(50% - 250px);
+    top: 180px
 }

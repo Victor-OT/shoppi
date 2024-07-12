@@ -1,9 +1,19 @@
+import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CardProduct } from '../../Components/CardProduct'
 import { Layout } from "../../Components/Layout"
 import './Home.css'
 
 function Home () {
+    const apiUrl = 'https://fakestoreapi.com/products/'
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        fetch(apiUrl)
+        .then(response => response.json())
+        .then(response => setData(response))
+    },[])
+
     return (
         <Layout>
             <div className='categories-container'>
@@ -50,12 +60,16 @@ function Home () {
                     <input type="text" placeholder='Search a Product...'/>
                 </div>
                 <section className='card-product-global-container'>
-                    <CardProduct />
-                    <CardProduct />
-                    <CardProduct />
-                    <CardProduct />
-                    <CardProduct />
-                    <CardProduct />
+                    {
+                        data?.map(product => (
+                            <CardProduct 
+                                key={product.id}
+                                image={product.image}
+                                title={product.title}
+                                price={product.price}
+                                category={product.category}/>
+                        ))
+                    }
                 </section>
             </div>
         </Layout>
