@@ -8,11 +8,27 @@ function Home () {
     const apiUrl = 'https://fakestoreapi.com/products/'
     const [data, setData] = useState([])
 
+    const [userInput , setUserInput] = useState('')
+    const [filteredProducts, setFilteredProducts] = useState(data)
+
     useEffect(() => {
         fetch(apiUrl)
         .then(response => response.json())
         .then(response => setData(response))
-    },[])
+    }, [])
+
+    const filterProductsByTitle = () => {
+        if (userInput === '') {
+            setFilteredProducts(data)
+        } else {
+            const filterByTitle = data.filter(product => product.title.toLocaleLowerCase().includes(userInput))
+            setFilteredProducts(filterByTitle)
+        }
+    }
+
+    useEffect(() => {
+        filterProductsByTitle()
+    }, [userInput])
 
     return (
         <Layout>
@@ -57,17 +73,21 @@ function Home () {
                     </ul>
                 </nav>
                 <div className='search-bar'>
-                    <input type="text" placeholder='Search a Product...'/>
+                    <input type="text" placeholder='Search a Product...'
+                        onChange={(event) => {
+                            const userValue = event.target.value.toLocaleLowerCase()
+                            setUserInput(userValue)
+                        }}/>
                 </div>
                 <section className='card-product-global-container'>
                     {
-                        data?.map(product => (
+                        filteredProducts?.map(product => (
                             <CardProduct 
                                 key={product.id}
-                                image={product.image}
+                                category={product.category}
                                 title={product.title}
                                 price={product.price}
-                                category={product.category}/>
+                                image={product.image}/>
                         ))
                     }
                 </section>
