@@ -7,7 +7,8 @@
 
 .categories-container {
     width: 100%;
-    min-width: 320;
+    display: flex;
+    flex-direction: column;
 }
 .categories-selection {
     display: flex;
@@ -80,4 +81,14 @@
     border-radius: 8px;
     padding: 0 0 0 8px;
     outline: none;
+}
+
+.card-product-global-container {
+    width: 300px;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    left: calc(50% - 140px);
+    top: calc(50% - 250px);
 }

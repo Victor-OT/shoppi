@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { CardProduct } from '../../Components/CardProduct'
 import { Layout } from "../../Components/Layout"
 import './Home.css'
 
@@ -48,6 +49,14 @@ function Home () {
                 <div className='search-bar'>
                     <input type="text" placeholder='Search a Product...'/>
                 </div>
+                <section className='card-product-global-container'>
+                    <CardProduct />
+                    <CardProduct />
+                    <CardProduct />
+                    <CardProduct />
+                    <CardProduct />
+                    <CardProduct />
+                </section>
             </div>
         </Layout>
     )

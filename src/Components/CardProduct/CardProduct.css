@@ -1,0 +1,71 @@
+:root {
+    --shoppi-green: #0DCA65;
+    --shoppi-grey: #AFAFAF;
+    --shoppi-black: #151515;
+    --montserrat: "Montserrat", sans-serif;
+}
+
+.card-product-container {
+    width: 130px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-product-container .card-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.card-info-container h2 {
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.card-info-container p {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.card-visuals-container {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    position: relative;
+    border: 1px solid var(--shoppi-grey);
+    border-radius: 6px;
+}
+
+.card-visuals-container .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.card-visuals-container span {
+    width: 10px;
+    height: 10px;
+    display: flex;
+    padding: 3px;
+    position: absolute;
+    top: 6px;
+    left: 106px;
+    border: 1px solid var(--shoppi-black);
+    border-radius: 100%;
+}
+
+.card-visuals-container p {
+    height: 16px;
+    font-weight: 600;
+    font-size: 8px;
+    color: white;
+    background: var(--shoppi-green);
+    border-radius: 4px;
+    padding: 4px 6px 0 6px;
+    position: absolute;
+    top: 100px;
+    left: 2px;
+}
