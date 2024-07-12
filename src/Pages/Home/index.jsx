@@ -9,12 +9,15 @@ function Home () {
     const [data, setData] = useState([])
 
     const [userInput , setUserInput] = useState('')
-    const [filteredProducts, setFilteredProducts] = useState(data)
+    const [filteredProducts, setFilteredProducts] = useState(null)
 
     useEffect(() => {
         fetch(apiUrl)
         .then(response => response.json())
-        .then(response => setData(response))
+        .then(response => {
+            setData(response)
+            setFilteredProducts(response)
+        })
     }, [])
 
     const filterProductsByTitle = () => {
