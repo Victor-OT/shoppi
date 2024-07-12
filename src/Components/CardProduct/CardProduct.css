@@ -10,7 +10,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .card-product-container .card-info-container {
