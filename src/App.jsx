@@ -1,5 +1,5 @@
 import { BrowserRouter, useRoutes } from 'react-router-dom'
-import { ShoppiContextProvider } from './Context'
+import { ShoppiContextProvider } from './Context/index.jsx'
 import { Home } from './Pages/Home'
 import { MyOrders } from './Pages/MyOrders'
 import { MyAccount } from './Pages/MyAccount'
