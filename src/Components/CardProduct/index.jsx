@@ -1,8 +1,14 @@
+import { useContext } from 'react'
+import { shoppiContext } from '../../Context'
 import './CardProduct.css'
 
 function CardProduct (data) {
+    const context = useContext(shoppiContext)
+
     return (
-        <div className='card-product-container'>
+        <div 
+            className='card-product-container'
+            onClick={() => context.setIsProductDetailActive(true)}>
             <div className='card-visuals-container'>
                 <img src={data.image} alt="product"
                 className='product-image' />

@@ -36,7 +36,6 @@ function ShoppiContextProvider ({children}) {
         return filterByCategory
     }
 
-
     useEffect(() => {
         if (userInput === '' || category === '') {
             setFilteredProducts(data)
@@ -56,6 +55,9 @@ function ShoppiContextProvider ({children}) {
         
     }, [userInput, category])
 
+    //Product Detail
+    const [isProductDetailActive, setIsProductDetailActive] = useState(false)
+
     return (
         <shoppiContext.Provider value={{
             data,
@@ -66,6 +68,8 @@ function ShoppiContextProvider ({children}) {
             setUserInput,
             category,
             setCategory,
+            isProductDetailActive,
+            setIsProductDetailActive
         }}>
             {children}
         </shoppiContext.Provider>

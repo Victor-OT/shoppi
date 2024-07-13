@@ -1,15 +1,13 @@
-import { useContext} from 'react'
+import { useContext, useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import { shoppiContext } from '../../Context'
+import { ProductDetail } from '../../Components/ProductDetail'
 import { CardProduct } from '../../Components/CardProduct'
 import { Layout } from "../../Components/Layout"
 import './Home.css'
 
 function Home () {
     const context = useContext(shoppiContext)
-
-    console.log(context.category)
-    console.log(context.filteredProducts)
 
     return (
         <Layout>
@@ -80,12 +78,17 @@ function Home () {
                                 category={product.category}
                                 title={product.title}
                                 price={product.price}
-                                image={product.image}/>
+                                image={product.image}
+                                />
                         ))
                     }
                 </section>
+                <div className={context.isProductDetailActive ? 'active-product-detail' : 'inactive-product-detail'}>
+                    <ProductDetail />
+                </div>
             </div>
         </Layout>
     )
 }
+
 export {Home}

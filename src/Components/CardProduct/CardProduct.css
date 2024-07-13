@@ -13,6 +13,10 @@
     margin-bottom: 24px;
 }
 
+.card-product-container:hover {
+    cursor: pointer;
+}
+
 .card-product-container .card-info-container {
     display: flex;
     align-items: center;
