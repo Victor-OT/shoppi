@@ -14,18 +14,10 @@ function ProductDetail () {
                         onClick={() => context.setIsProductDetailActive(false)}/>
                 </div>
                 <div className='product-detail-content'>
-                    <img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg" alt="product" />
-                    <h2>$109.99</h2>
-                    <h3>Headphones</h3>
-                    <p>
-                        great outerwear jackets for Spring/Autumn/
-                        Winter, suitable for many occasions, such as 
-                        working, hiking, camping, mountain/rock climbing, 
-                        cycling, traveling or other outdoors. Good 
-                        gift choice for you or your family member. 
-                        A warm hearted love to Father, husband 
-                        or son in this thanksgiving or Christmas Day
-                    </p>
+                    <img src={context.productToShow.image} alt="product" />
+                    <h2>${context.productToShow.price}</h2>
+                    <h3>{context.productToShow.title}</h3>
+                    <p>{context.productToShow.description}</p>
                 </div>
         </section>
         </div>

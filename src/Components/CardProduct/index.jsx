@@ -5,10 +5,15 @@ import './CardProduct.css'
 function CardProduct (data) {
     const context = useContext(shoppiContext)
 
+    const showProductDetail = (data) => {
+        context.setProductToShow(data)
+        context.setIsProductDetailActive(true)
+    } 
+
     return (
         <div 
             className='card-product-container'
-            onClick={() => context.setIsProductDetailActive(true)}>
+            onClick={() => showProductDetail(data)}>
             <div className='card-visuals-container'>
                 <img src={data.image} alt="product"
                 className='product-image' />

@@ -95,7 +95,6 @@
 
 .active-product-detail {
     position: fixed;
-    top: 100px;
     align-self: center;
     z-index: 10;
 }
