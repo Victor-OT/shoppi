@@ -66,7 +66,7 @@ function Home () {
                     </ul>
                 </nav>
                 <div className='search-bar'>
-                    <input type="text" placeholder='Search a Product...'
+                    <input type="text" id='text' placeholder='Search a Product...'
                         onChange={(event) => {
                             const userValue = event.target.value.toLocaleLowerCase()
                             context.setUserInput(userValue)
