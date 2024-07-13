@@ -1,37 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext} from 'react'
 import { NavLink } from 'react-router-dom'
+import { shoppiContext } from '../../Context'
 import { CardProduct } from '../../Components/CardProduct'
 import { Layout } from "../../Components/Layout"
 import './Home.css'
 
 function Home () {
-    const apiUrl = 'https://fakestoreapi.com/products/'
-    const [data, setData] = useState([])
+    const context = useContext(shoppiContext)
 
-    const [userInput , setUserInput] = useState('')
-    const [filteredProducts, setFilteredProducts] = useState(null)
-
-    useEffect(() => {
-        fetch(apiUrl)
-        .then(response => response.json())
-        .then(response => {
-            setData(response)
-            setFilteredProducts(response)
-        })
-    }, [])
-
-    const filterProductsByTitle = () => {
-        if (userInput === '') {
-            setFilteredProducts(data)
-        } else {
-            const filterByTitle = data.filter(product => product.title.toLocaleLowerCase().includes(userInput))
-            setFilteredProducts(filterByTitle)
-        }
-    }
-
-    useEffect(() => {
-        filterProductsByTitle()
-    }, [userInput])
+    console.log(context.category)
+    console.log(context.filteredProducts)
 
     return (
         <Layout>
@@ -44,32 +22,44 @@ function Home () {
                 <nav>
                     <ul>
                         <li>
-                            <NavLink to='/' className={({isActive}) => 
-                                isActive ? 'active-category' : 'inactive-category'}>
+                            <NavLink 
+                                to='/' 
+                                className={({isActive}) => 
+                                isActive ? 'active-category' : 'inactive-category'}
+                                onClick={() => context.setCategory(``)}>
                                 All
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/mens-clothing' className={({isActive}) => 
-                                isActive ? 'active-category' : 'inactive-category'}>
+                            <NavLink 
+                                to='/mens-clothing' 
+                                className={({isActive}) => 
+                                isActive ? 'active-category' : 'inactive-category'}
+                                onClick={() => context.setCategory(`men's clothing`)}>
                                 Men's Clothing
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/womens-clothing' className={({isActive}) => 
-                                isActive ? 'active-category' : 'inactive-category'}>
+                            <NavLink 
+                                to='/womens-clothing' className={({isActive}) => 
+                                isActive ? 'active-category' : 'inactive-category'}
+                                onClick={() => context.setCategory(`women's clothing`)}>
                                 Women's Clothing
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/jewelery' className={({isActive}) => 
-                                isActive ? 'active-category' : 'inactive-category'}>
+                            <NavLink 
+                                to='/jewelery' className={({isActive}) => 
+                                isActive ? 'active-category' : 'inactive-category'}
+                                onClick={() => context.setCategory(`jewelery`)}>
                                 Jewelery
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/electronics' className={({isActive}) => 
-                                isActive ? 'active-category' : 'inactive-category'}>
+                            <NavLink 
+                                to='/electronics' className={({isActive}) => 
+                                isActive ? 'active-category' : 'inactive-category'}
+                                onClick={() => context.setCategory(`electronics`)}>
                                 Electronics
                             </NavLink>
                         </li>
@@ -79,12 +69,12 @@ function Home () {
                     <input type="text" placeholder='Search a Product...'
                         onChange={(event) => {
                             const userValue = event.target.value.toLocaleLowerCase()
-                            setUserInput(userValue)
+                            context.setUserInput(userValue)
                         }}/>
                 </div>
                 <section className='card-product-global-container'>
                     {
-                        filteredProducts?.map(product => (
+                        context.filteredProducts?.map(product => (
                             <CardProduct 
                                 key={product.id}
                                 category={product.category}

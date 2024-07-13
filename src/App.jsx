@@ -1,4 +1,5 @@
 import { BrowserRouter, useRoutes } from 'react-router-dom'
+import { ShoppiContextProvider } from './Context'
 import { Home } from './Pages/Home'
 import { MyOrders } from './Pages/MyOrders'
 import { MyAccount } from './Pages/MyAccount'
@@ -25,10 +26,12 @@ function AppRoutes () {
 function App() {
 
   return (
-    <BrowserRouter>
-      <AppRoutes />
-      <Navbar />
-    </BrowserRouter>
+    <ShoppiContextProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <Navbar />
+      </BrowserRouter>
+    </ShoppiContextProvider>
   )
 }
 
