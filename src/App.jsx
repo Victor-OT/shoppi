@@ -1,5 +1,6 @@
 import { BrowserRouter, useRoutes } from 'react-router-dom'
 import { ShoppiContextProvider } from './Context/index.jsx'
+import { ShoppingCart } from './Components/ShoppingCart/index.jsx'
 import { Home } from './Pages/Home'
 import { MyOrders } from './Pages/MyOrders'
 import { MyAccount } from './Pages/MyAccount'
@@ -30,6 +31,7 @@ function App() {
       <BrowserRouter>
         <AppRoutes />
         <Navbar />
+        <ShoppingCart />
       </BrowserRouter>
     </ShoppiContextProvider>
   )

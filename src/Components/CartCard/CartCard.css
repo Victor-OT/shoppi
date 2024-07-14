@@ -1,0 +1,52 @@
+:root {
+    --shoppi-green: #0DCA65;
+    --shoppi-grey: #AFAFAF;
+    --shoppi-black: #151515;
+    --montserrat: "Montserrat", sans-serif;
+}
+
+.cart-card-container {
+    min-width: 235px;
+    max-width: 300px;
+    height: 75px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--shoppi-grey);
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.cart-card-header {
+    display: flex;
+    align-items: center;
+}
+
+.cart-card-header img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-card-header p {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.cart-card-total{
+    display: flex;
+    align-items: center;
+}
+
+.cart-card-total p {
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.cart-card-total img {
+    width: 10px;
+    height: 10px;
+}

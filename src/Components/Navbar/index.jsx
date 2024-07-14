@@ -1,7 +1,9 @@
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { shoppiContext } from '../../Context'
 import './Navbar.css'
 function Navbar () {
-
+    const context = useContext(shoppiContext)
     return (
         <div className="navbar">
             <div className='navbar-container'>
@@ -29,7 +31,9 @@ function Navbar () {
                                 Sign Out
                             </NavLink>
                         </li>
-                        <li className='shopping-cart-container'>
+                        <li 
+                            className='shopping-cart-counter'
+                            onClick={() => context.setIsShoppingCartActive(true)}>
                             <img src='/shopping-cart.svg' alt="cart" className='shopping-cart-img'/>
                             <p>0</p>
                         </li>
