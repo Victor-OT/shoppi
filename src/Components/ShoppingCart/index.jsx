@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { shoppiContext } from '../../Context'
 import { CartCard } from '../CartCard'
@@ -5,6 +6,7 @@ import './ShoppingCart.css'
 
 function ShoppingCart () {
     const context = useContext(shoppiContext)
+
     const getTotal = (shoppingCart) => {
         let sum = 0
         shoppingCart.forEach(product => {
@@ -12,6 +14,13 @@ function ShoppingCart () {
         })
         const total = sum.toFixed(2)
         return total
+    }
+
+    const getOrder = () => {
+        const addOrder = [...context.orders, context.shoppingCart]
+        context.setOrders(addOrder)
+        context.setShoppingCart([])
+        context.setIsShoppingCartActive(false)
     }
     return (
         <div className={context.isShoppingCartActive ? 'shopping-cart' : 'inactive-shopping-cart'}>
@@ -39,9 +48,11 @@ function ShoppingCart () {
                     <p className='total'>Total:</p>
                     <p className='price'>${getTotal(context.shoppingCart)}</p>
                 </div>
-                <button>
-                    checkout
-                </button>
+                <Link to='/my-orders'>
+                    <button onClick={() => getOrder()}>
+                        Checkout
+                    </button>
+                </Link>
             </section>
         </div>
     )

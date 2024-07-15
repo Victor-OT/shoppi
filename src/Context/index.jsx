@@ -63,7 +63,9 @@ function ShoppiContextProvider ({children}) {
     const[isShoppingCartActive, setIsShoppingCartActive] = useState(false)
     const [shoppingCart, setShoppingCart] = useState([])
 
-    console.log(shoppingCart)
+    //Orders
+    const [orders, setOrders] = useState([])
+    console.log(orders)
 
     return (
         <shoppiContext.Provider value={{
@@ -82,7 +84,9 @@ function ShoppiContextProvider ({children}) {
             isShoppingCartActive,
             setIsShoppingCartActive,
             shoppingCart,
-            setShoppingCart
+            setShoppingCart,
+            orders,
+            setOrders
         }}>
             {children}
         </shoppiContext.Provider>
