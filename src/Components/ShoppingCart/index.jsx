@@ -26,7 +26,8 @@ function ShoppingCart () {
                     {
                         context.shoppingCart?.map(product => (
                             <CartCard 
-                                key={product.title}
+                                key={Math.floor(Math.random() * 10000) + 1}
+                                product={product}
                                 id={product.id}
                                 image={product.image}
                                 title={product.title}

@@ -1,13 +1,17 @@
 import { useContext } from 'react'
 import { shoppiContext } from '../../Context'
 import './CartCard.css'
+import { ShoppingCart } from '../ShoppingCart'
 
 function CartCard (product) {
     const context = useContext(shoppiContext)
-    const deleteProductFromCart = () => {
-        console.log(product.id)
-        const newShoppingCart = context.shoppingCart.filter(item => item.id !== product.id)
-        context.setShoppingCart(newShoppingCart)
+
+    const deleteProductFromCart = (product) => {
+        const deletedIndexProduct = context.shoppingCart.indexOf(product.product)
+        console.log(deletedIndexProduct)
+        const updatedCart = [...context.shoppingCart]
+        updatedCart.splice(deletedIndexProduct, 1)
+        context.setShoppingCart(updatedCart)
     }
     return (
         <div className="cart-card-container">
