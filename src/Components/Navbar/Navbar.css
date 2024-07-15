@@ -63,3 +63,10 @@
     text-decoration-line: none;
     color: var(--shoppi-black);
 }
+
+@media (min-width: 500px ) {
+    .navbar-container ul {
+        font-size: 14px;
+        gap: 20px;
+    }
+}

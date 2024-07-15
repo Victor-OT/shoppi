@@ -103,3 +103,33 @@
 .inactive-product-detail {
     display: none;
 }
+
+@media (min-width: 520px) {
+    .categories-container nav {
+        width: 80%;
+        height: 50px;
+        align-self: center;
+    }
+
+    .categories-container nav ul {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 600px) {
+    .card-product-global-container {
+        width: 90%;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        left: calc(50% - 250px);
+    }
+}
+
+@media (min-width: 700px) {
+    .card-product-global-container {
+        width: 700px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        left: calc(50% - 336px);
+    }
+}
