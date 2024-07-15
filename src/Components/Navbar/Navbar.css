@@ -11,16 +11,15 @@
     top: 0;
     width: 100%;
     min-width: 320px;
-    padding: 8px 0;
+    margin-top: 10px;
     background: white;
 }
 
 .navbar-container {
-    width: 95%;
-    min-width: 320;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 20px;
 }
 
 .navbar-container .h1 {
@@ -30,21 +29,22 @@
 
 .navbar-container ul {
     display: flex;
-    gap: 7px;
+    gap: 10px;
     list-style-type: none;
     color: black;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .shopping-cart-counter {
     display: flex;
     align-items: center;
-    height: 8px;
+    height: 12px;
 }
 .shopping-cart-img {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
 }
 
 .active-link {
