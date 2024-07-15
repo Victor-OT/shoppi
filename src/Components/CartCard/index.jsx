@@ -8,7 +8,6 @@ function CartCard (product) {
 
     const deleteProductFromCart = (product) => {
         const deletedIndexProduct = context.shoppingCart.indexOf(product.product)
-        console.log(deletedIndexProduct)
         const updatedCart = [...context.shoppingCart]
         updatedCart.splice(deletedIndexProduct, 1)
         context.setShoppingCart(updatedCart)

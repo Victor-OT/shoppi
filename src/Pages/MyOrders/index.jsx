@@ -1,3 +1,4 @@
+import { v4 } from 'uuid'
 import { useContext } from "react"
 import { shoppiContext } from '../../Context'
 import { Layout } from "../../Components/Layout"
@@ -14,6 +15,7 @@ function MyOrders () {
                 {
                     context.orders?.map(order => (
                         <CardOrder
+                        key={v4()}
                         order={order}
                         articles={order.length}/>
                     ))

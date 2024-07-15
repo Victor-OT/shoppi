@@ -1,3 +1,4 @@
+import { v4 } from 'uuid'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { shoppiContext } from '../../Context'
@@ -26,7 +27,7 @@ function ShoppingCart () {
                     {
                         context.shoppingCart?.map(product => (
                             <CartCard 
-                                key={Math.floor(Math.random() * 10000) + 1}
+                                key={v4()}
                                 product={product}
                                 id={product.id}
                                 image={product.image}
