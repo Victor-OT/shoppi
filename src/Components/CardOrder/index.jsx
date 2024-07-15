@@ -9,7 +9,7 @@ function CardOrder (data) {
         <div className='order-card-container'>
             <div className='order-info'>
                 <p className='order-date'>15/07/2024</p>
-                <p>Arcicles: {data.articles}</p>
+                <p>Articles: {data.articles}</p>
             </div>
             <p className='total-order'>${context.getTotal(data.order)}</p>
         </div>
