@@ -1,15 +1,25 @@
+import { useContext } from 'react'
+import { shoppiContext } from '../../Context'
 import './CartCard.css'
 
-function CartCard () {
+function CartCard (product) {
+    const context = useContext(shoppiContext)
+    const deleteProductFromCart = () => {
+        console.log(product.id)
+        const newShoppingCart = context.shoppingCart.filter(item => item.id !== product.id)
+        context.setShoppingCart(newShoppingCart)
+    }
     return (
         <div className="cart-card-container">
             <div className='cart-card-header'>
-                <img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="product" />
-                <p>Headphones</p>
+                <img src={product.image} alt="product" />
+                <p>{product.title}</p>
             </div>
             <div className='cart-card-total'>
-                <p>$109.99</p>
-                <img src='/cross.svg' alt="close" />
+                <p>${product.price}</p>
+                <img 
+                    src='/cross.svg' alt="close" 
+                    onClick={() => deleteProductFromCart(product)}/>
             </div>
         </div>
     )

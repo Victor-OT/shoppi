@@ -10,7 +10,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 24px;
+    margin-bottom: 6px;
 }
 
 .card-product-container:hover {
@@ -52,13 +52,13 @@
 }
 
 .card-visuals-container span {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     display: flex;
     padding: 3px;
     position: absolute;
     top: 6px;
-    left: 116px;
+    left: 110px;
     background: white;
     border: 1px solid var(--shoppi-black);
     border-radius: 100%;

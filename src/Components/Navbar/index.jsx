@@ -35,7 +35,7 @@ function Navbar () {
                             className='shopping-cart-counter'
                             onClick={() => context.setIsShoppingCartActive(true)}>
                             <img src='/shopping-cart.svg' alt="cart" className='shopping-cart-img'/>
-                            <p>0</p>
+                            <p>{context.shoppingCart.length}</p>
                         </li>
                     </ul>
                 </nav>

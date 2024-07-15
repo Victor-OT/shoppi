@@ -75,6 +75,7 @@ function Home () {
                         context.filteredProducts?.map(product => (
                             <CardProduct 
                                 key={product.id}
+                                id={product.id}
                                 category={product.category}
                                 title={product.title}
                                 price={product.price}

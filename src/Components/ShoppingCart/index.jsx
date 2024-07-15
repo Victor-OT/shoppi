@@ -5,6 +5,14 @@ import './ShoppingCart.css'
 
 function ShoppingCart () {
     const context = useContext(shoppiContext)
+    const getTotal = (shoppingCart) => {
+        let sum = 0
+        shoppingCart.forEach(product => {
+           sum = sum + product.price
+        })
+        const total = sum.toFixed(2)
+        return total
+    }
     return (
         <div className={context.isShoppingCartActive ? 'shopping-cart' : 'inactive-shopping-cart'}>
             <section className='shopping-cart-container'>
@@ -15,18 +23,20 @@ function ShoppingCart () {
                         onClick={() => context.setIsShoppingCartActive(false)}/>
                 </div>
                 <div className='shopping-cart-card-list-container'>
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
+                    {
+                        context.shoppingCart?.map(product => (
+                            <CartCard 
+                                key={product.title}
+                                id={product.id}
+                                image={product.image}
+                                title={product.title}
+                                price={product.price}/>
+                        ))
+                    }
                 </div>
                 <div className='shopping-cart-total'>
                     <p className='total'>Total:</p>
-                    <p className='price'>$109.99</p>
+                    <p className='price'>${getTotal(context.shoppingCart)}</p>
                 </div>
                 <button>
                     checkout

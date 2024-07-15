@@ -6,8 +6,8 @@
 }
 
 .cart-card-container {
+    width: 90%;
     min-width: 235px;
-    max-width: 300px;
     height: 75px;
     padding: 0 10px;
     display: flex;
@@ -28,6 +28,7 @@
     height: 64px;
     object-fit: cover;
     border-radius: 4px;
+    margin:6px 0;
 }
 
 .cart-card-header p {

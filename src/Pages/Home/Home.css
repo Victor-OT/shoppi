@@ -88,6 +88,7 @@
     margin-top: 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
     position: absolute;
     left: calc(50% - 146px);
     top: 180px
@@ -95,6 +96,7 @@
 
 .active-product-detail {
     position: fixed;
+    top: 120px;
     align-self: center;
 }
 
