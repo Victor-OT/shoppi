@@ -7,15 +7,6 @@ import './ShoppingCart.css'
 function ShoppingCart () {
     const context = useContext(shoppiContext)
 
-    const getTotal = (shoppingCart) => {
-        let sum = 0
-        shoppingCart.forEach(product => {
-           sum = sum + product.price
-        })
-        const total = sum.toFixed(2)
-        return total
-    }
-
     const getOrder = () => {
         const addOrder = [...context.orders, context.shoppingCart]
         context.setOrders(addOrder)
@@ -46,7 +37,7 @@ function ShoppingCart () {
                 </div>
                 <div className='shopping-cart-total'>
                     <p className='total'>Total:</p>
-                    <p className='price'>${getTotal(context.shoppingCart)}</p>
+                    <p className='price'>${context.getTotal(context.shoppingCart)}</p>
                 </div>
                 <Link to='/my-orders'>
                     <button onClick={() => getOrder()}>

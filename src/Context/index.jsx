@@ -63,9 +63,18 @@ function ShoppiContextProvider ({children}) {
     const[isShoppingCartActive, setIsShoppingCartActive] = useState(false)
     const [shoppingCart, setShoppingCart] = useState([])
 
+    const getTotal = (shoppingCart) => {
+        let sum = 0
+        shoppingCart.forEach(product => {
+           sum = sum + product.price
+        })
+        const total = sum.toFixed(2)
+        return total
+    }
+
+
     //Orders
     const [orders, setOrders] = useState([])
-    console.log(orders)
 
     return (
         <shoppiContext.Provider value={{
@@ -85,6 +94,7 @@ function ShoppiContextProvider ({children}) {
             setIsShoppingCartActive,
             shoppingCart,
             setShoppingCart,
+            getTotal,
             orders,
             setOrders
         }}>

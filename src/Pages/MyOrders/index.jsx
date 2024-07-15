@@ -14,6 +14,7 @@ function MyOrders () {
                 {
                     context.orders?.map(order => (
                         <CardOrder
+                        order={order}
                         articles={order.length}/>
                     ))
                 }
